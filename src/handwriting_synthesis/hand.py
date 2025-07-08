@@ -14,6 +14,7 @@ class Hand(object):
     def __init__(
             self,
             checkpoint_dir: Text = 'checkpoints',
+            styles_dir: Text = 'styles',
     ):
         os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
         self.nn = rnn(
@@ -40,6 +41,8 @@ class Hand(object):
             attention_mixture_components=10
         )
         self.nn.restore()
+
+        self._styles_dir = styles_dir
 
     def write(self, filename, lines, biases=None, styles=None, stroke_colors=None, stroke_widths=None):
         valid_char_set = set(drawing.alphabet)
@@ -76,8 +79,8 @@ class Hand(object):
 
         if styles is not None:
             for i, (cs, style) in enumerate(zip(lines, styles)):
-                x_p = np.load('styles/style-{}-strokes.npy'.format(style))
-                c_p = np.load('styles/style-{}-chars.npy'.format(style)).tostring().decode('utf-8')
+                x_p = np.load('{}/style-{}-strokes.npy'.format(self._styles_dir, style))
+                c_p = np.load('{}/style-{}-chars.npy'.format(self._styles_dir, style)).tostring().decode('utf-8')
 
                 c_p = str(c_p) + " " + cs
                 c_p = drawing.encode_ascii(c_p)
