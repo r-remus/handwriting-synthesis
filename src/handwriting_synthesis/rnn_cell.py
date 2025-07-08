@@ -6,7 +6,7 @@ import tensorflow_probability as tfp
 tfd = tfp.distributions
 import numpy as np
 
-from tf_utils import dense_layer, shape
+from handwriting_synthesis.tf_utils import dense_layer, shape
 
 
 LSTMAttentionCellState = namedtuple(

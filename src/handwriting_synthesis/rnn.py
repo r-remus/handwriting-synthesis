@@ -5,12 +5,12 @@ import numpy as np
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
-import drawing
-from data_frame import DataFrame
-from rnn_cell import LSTMAttentionCell
-from rnn_ops import rnn_free_run
-from tf_base_model import TFBaseModel
-from tf_utils import time_distributed_dense_layer
+import handwriting_synthesis.drawing
+from handwriting_synthesis.data_frame import DataFrame
+from handwriting_synthesis.rnn_cell import LSTMAttentionCell
+from handwriting_synthesis.rnn_ops import rnn_free_run
+from handwriting_synthesis.tf_base_model import TFBaseModel
+from handwriting_synthesis.tf_utils import time_distributed_dense_layer
 
 
 class DataReader(object):

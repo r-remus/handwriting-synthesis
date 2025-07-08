@@ -1,6 +1,6 @@
-import drawing
+import handwriting_synthesis.drawing
 from typing import Text
-from rnn import rnn
+from handwriting_synthesis.rnn import rnn
 
 import numpy as np
 import svgwrite
