@@ -2,8 +2,9 @@ data/raw/ascii
 data/raw/lineStrokes
 data/raw/original
 data/processed
-
+*__pycache__
 logs
 predictions
-venv
+vemv
+.venv
 
