@@ -5,7 +5,7 @@ import numpy as np
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
-import handwriting_synthesis.drawing
+import handwriting_synthesis.drawing as drawing
 from handwriting_synthesis.data_frame import DataFrame
 from handwriting_synthesis.rnn_cell import LSTMAttentionCell
 from handwriting_synthesis.rnn_ops import rnn_free_run

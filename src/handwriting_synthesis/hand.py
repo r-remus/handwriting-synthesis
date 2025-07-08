@@ -1,4 +1,4 @@
-import handwriting_synthesis.drawing
+import handwriting_synthesis.drawing as drawing as drawing
 from typing import Text
 from handwriting_synthesis.rnn import rnn
 
