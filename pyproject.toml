@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "handwriting-synthesis"
+version = "0.0.1"
+description = "Handwriting Synthesis"
+authors = [
+    { name = "Jesse Pangburn", email = "jesse.pangburn@gmail.com" },
+]
+dependencies = [
+    "matplotlib>=2.1.0",
+    "pandas>=0.22.0",
+    "scikit-learn>=0.19.1",
+    "scipy>=1.0.0",
+    "svgwrite>=1.1.12",
+    "tensorflow~=2.15.0",
+    "tensorflow-probability~=0.23.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
