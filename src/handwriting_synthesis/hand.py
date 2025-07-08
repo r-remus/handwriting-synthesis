@@ -1,10 +1,9 @@
 import drawing
+from typing import Text
 from rnn import rnn
-
 
 import numpy as np
 import svgwrite
-
 
 import logging
 import os
@@ -12,11 +11,14 @@ import os
 
 class Hand(object):
 
-    def __init__(self):
+    def __init__(
+            self,
+            checkpoint_dir: Text = 'checkpoints',
+    ):
         os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
         self.nn = rnn(
             log_dir='logs',
-            checkpoint_dir='checkpoints',
+            checkpoint_dir=checkpoint_dir,
             prediction_dir='predictions',
             learning_rates=[.0001, .00005, .00002],
             batch_sizes=[32, 64, 64],
