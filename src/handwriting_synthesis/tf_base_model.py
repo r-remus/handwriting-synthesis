@@ -10,7 +10,7 @@ import numpy as np
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
-from tf_utils import shape
+from handwriting_synthesis.tf_utils import shape
 
 
 class TFBaseModel(object):
